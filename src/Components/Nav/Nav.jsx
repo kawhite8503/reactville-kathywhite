@@ -2,11 +2,16 @@
 import Logo from '../../assets/react-logo.png'
 import { Link, NavLink } from 'react-router-dom'
 
-const Nav = () => {
+
+import Wallet from './Wallet'
+
+const Nav = (props) => {
   return (
     <nav className="navigation-bar">
-      <Link to='/' id='logo'><img src="Logo" alt="logo" /></Link>
-      <Link to='/burgers'>BURGER SHOP</Link>
+      <NavLink to='/' id='logo'><img src={Logo} alt="logo" /></NavLink>
+      <NavLink to='/burgers'>BURGER SHOP</NavLink>
+      <Link to='/market'>SuperMarket</Link>
+      <Wallet cash={props.cash}/>
     </nav>
   )
 }

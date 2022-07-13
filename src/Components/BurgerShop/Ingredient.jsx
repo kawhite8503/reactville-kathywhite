@@ -1,10 +1,17 @@
 
 const Ingredient = (props) => {
 	return (
-		<li>
-			Name of ingredient here
-			<button>+</button>
-			<button>X</button>
+		<li style={props.disabled ? {background: 'gray' } : {background: props.ingredient.color}}>
+			{props.ingredient.name}
+
+		
+			{props.addToBurger
+			?	
+			<button disabled={props.disabled} onClick={() => props.addToBurger(props.ingredient)}>+</button>
+
+			:	
+			<button onClick={() => props.removeFromBurger(props.idx)}>X</button>
+			}
 		</li>
 	)
 }
